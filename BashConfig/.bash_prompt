@@ -46,5 +46,16 @@ function parse_git_dirty {
 	fi
 }
 
-export PS1="\n\[\e[34;46m\]\t\[\e[m\]\[\e[46m\] \[\e[m\]\[\e[30;46m\] \[\e[m\]\[\e[34;46m\]\d\[\e[m\]\[\e[30;44m\] \[\e[m\]\[\e[36;44m\]\u\[\e[m\]\[\e[36;44m\]❱\[\e[m\]\[\e[36;44m\]\w\[\e[m\]\[\e[36;44m\]❱\[\e[m\]\[\e[37;44m\]\`parse_git_branch\`\[\e[m\]\[\e[34m\]"
-PS1+=" \n----|>"
+export PS1="\n\[\e[34;46m\]\t\[\e[m\]\[\e[46m\] \[\e[m\]\[\e[30;46m\] \[\e[m\]\[\e[34;46m\]\d\[\e[m\]\[\e[30;44m\] \[\e[m\]\[\e[36;44m\]\u\[\e[m\]\[\e[36;44m\]❱\[\e[m\]\[\e[36;44m\]\w\[\e[m\]\[\e[36;44m\]❱\[\e[m\]\[\e[37;44m\]\`parse_git_branch\`\[\e[m\]\[\e[34m\]" # complex garbage to get the colors right
+PS1+=" \n----|>" # sexy prompt
+PS1+="\[\e[0m\]" # reset so that text is not grayed out
+
+
+ export LS_OPTIONS='--color=auto'
+ eval "`dircolors`"
+ alias ls='ls $LS_OPTIONS'
+ alias ll='ls $LS_OPTIONS -l'
+ alias l='ls $LS_OPTIONS -lA'
+
+#adds starship to prompt
+eval "$(starship init bash)"

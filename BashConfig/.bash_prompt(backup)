@@ -1,0 +1,11 @@
+
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+# TERMINAL PROMPT
+PS1="\n\[\e[0;93m\]\u\[\e[m\]"    # username
+PS1+="❱ "                         # arrow and space
+PS1+="\[\e[0;95m\]\W\[\e[m\]"     # current directory
+PS1+="❱ "                         # arrow and space
+                                  # I will be adding some new things to the end of this line
+PS1+=" \n ➥ "                     # space and new line, maybe a nice arrow
+export PS1;
